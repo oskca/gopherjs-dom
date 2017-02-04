@@ -165,16 +165,6 @@ func WrapEventTarget(t *js.Object) *EventTarget {
 	return &EventTarget{Object: t}
 }
 
-type Win struct {
-	*EventTarget
-}
-
-func WrapWindow(o *js.Object) *Win {
-	return &Win{
-		EventTarget: WrapEventTarget(o),
-	}
-}
-
 type NodeType int
 
 const (
