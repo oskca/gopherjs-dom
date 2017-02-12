@@ -98,42 +98,42 @@ type Win struct {
 
 	MozRequestAnimationFrame func() `js:"mozRequestAnimationFrame"` // Window.mozRequestAnimationFrame() Tells the browser that an animation is in progress, requesting that the browser schedule a repaint of the window for the next animation frame. This will cause a MozBeforePaint event to fire before that repaint occurs.
 
-	Open                        func(url string) `js:"open"`                           // Window.open() Opens a new window.
-	OpenDialog                  func()           `js:"openDialog"`                     // Window.openDialog() Opens a new dialog window.
-	PostMessage                 func()           `js:"postMessage"`                    // Window.postMessage() Provides a secure means for one window to send a string of data to another window, which need not be within the same domain as the first.
-	Print                       func()           `js:"print"`                          // Window.print() Opens the Print Dialog to print the current document.
-	Prompt                      func()           `js:"prompt"`                         // Window.prompt() Returns the text entered by the user in a prompt dialog.
-	ReleaseEvents               func()           `js:"releaseEvents"`                  // Window.releaseEvents()  Releases the window from trapping events of a specific type.
-	RequestIdleCallback         func()           `js:"requestIdleCallback"`            // Window.requestIdleCallback()   Enables the scheduling of tasks during a browser's idle periods.
-	ResizeBy                    func()           `js:"resizeBy"`                       // Window.resizeBy() Resizes the current window by a certain amount.
-	ResizeTo                    func()           `js:"resizeTo"`                       // Window.resizeTo() Dynamically resizes window.
-	Restore                     func()           `js:"restore"`                        // Window.restore() FIXME: NeedsContents
-	RouteEvent                  func()           `js:"routeEvent"`                     // Window.routeEvent() Obsolete since Gecko 24 FIXME: NeedsContents
-	Scroll                      func()           `js:"scroll"`                         // Window.scroll() Scrolls the window to a particular place in the document.
-	ScrollBy                    func()           `js:"scrollBy"`                       // Window.scrollBy() Scrolls the document in the window by the given amount.
-	ScrollByLines               func()           `js:"scrollByLines"`                  // Window.scrollByLines() Scrolls the document by the given number of lines.
-	ScrollByPages               func()           `js:"scrollByPages"`                  // Window.scrollByPages() Scrolls the current document by the specified number of pages.
-	ScrollTo                    func()           `js:"scrollTo"`                       // Window.scrollTo() Scrolls to a particular set of coordinates in the document.
-	SetCursor                   func()           `js:"setCursor"`                      // Window.setCursor() Changes the cursor for the current window
-	SetImmediate                func()           `js:"setImmediate"`                   // Window.setImmediate() Executes a function after the browser has finished other heavy tasks
-	SetResizable                func()           `js:"setResizable"`                   // Window.setResizable() Toggles a user's ability to resize a window.
-	ShowModalDialog             func()           `js:"showModalDialog"`                // Window.showModalDialog() Displays a modal dialog.
-	SizeToContent               func()           `js:"sizeToContent"`                  // Window.sizeToContent() Sizes the window according to its content.
-	Stop                        func()           `js:"stop"`                           // Window.stop() This method stops window loading.
-	UpdateCommands              func()           `js:"updateCommands"`                 // Window.updateCommands() Updates the state of commands of the current chrome window (UI).
-	Ondevicelight               func()           `js:"ondevicelight "`                 // Window.ondevicelight An event handler property for any ambient light levels changes
-	Ondevicemotion              func()           `js:"ondevicemotion "`                // Window.ondevicemotion Called if accelerometer detects a change (For mobile devices)
-	Ondeviceorientation         func()           `js:"ondeviceorientation "`           // Window.ondeviceorientation Called when the orientation is changed (For mobile devices)
-	Ondeviceorientationabsolute func()           `js:"ondeviceorientationabsolute   "` // Window.ondeviceorientationabsolute   Chrome only An event handler property for any device orientation changes.
-	Ondeviceproximity           func()           `js:"ondeviceproximity "`             // Window.ondeviceproximity An event handler property for device proximity event
-	Onappinstalled              func()           `js:"onappinstalled "`                // Window.onappinstalled Called when the page is installed as a webapp. See appinstalled event.
-	Oninput                     func()           `js:"oninput "`                       // Window.oninput Called when the value of an <input> element changes
-	Onpaint                     func()           `js:"onpaint "`                       // Window.onpaint An event handler property for paint events on the window.
-	Onrejectionhandled          func()           `js:"onrejectionhandled  "`           // Window.onrejectionhandled  An event handler for handled Promise rejection events.
-	Onuserproximity             func()           `js:"onuserproximity "`               // Window.onuserproximity An event handler property for user proximity events.
-	Onvrdisplayconnected        func()           `js:"onvrdisplayconnected  "`         // Window.onvrdisplayconnected  Represents an event handler that will run when a compatible VR device has been connected to the computer (when the vrdisplayconnected event fires).
-	Onvrdisplaydisconnected     func()           `js:"onvrdisplaydisconnected  "`      // Window.onvrdisplaydisconnected  Represents an event handler that will run when a compatible VR device has been disconnected from the computer (when the vrdisplaydisconnected event fires).
-	Onvrdisplaypresentchange    func()           `js:"onvrdisplaypresentchange  "`     // Window.onvrdisplaypresentchange  represents an event handler that will run when the presenting state of a VR device changes — i.e. goes from presenting to not presenting, or vice versa (when the onvrdisplaypresentchange event fires).
+	Open                        func(url string) *js.Object `js:"open"`                           // Window.open() Opens a new window.
+	OpenDialog                  func()                      `js:"openDialog"`                     // Window.openDialog() Opens a new dialog window.
+	PostMessage                 func()                      `js:"postMessage"`                    // Window.postMessage() Provides a secure means for one window to send a string of data to another window, which need not be within the same domain as the first.
+	Print                       func()                      `js:"print"`                          // Window.print() Opens the Print Dialog to print the current document.
+	Prompt                      func()                      `js:"prompt"`                         // Window.prompt() Returns the text entered by the user in a prompt dialog.
+	ReleaseEvents               func()                      `js:"releaseEvents"`                  // Window.releaseEvents()  Releases the window from trapping events of a specific type.
+	RequestIdleCallback         func()                      `js:"requestIdleCallback"`            // Window.requestIdleCallback()   Enables the scheduling of tasks during a browser's idle periods.
+	ResizeBy                    func()                      `js:"resizeBy"`                       // Window.resizeBy() Resizes the current window by a certain amount.
+	ResizeTo                    func()                      `js:"resizeTo"`                       // Window.resizeTo() Dynamically resizes window.
+	Restore                     func()                      `js:"restore"`                        // Window.restore() FIXME: NeedsContents
+	RouteEvent                  func()                      `js:"routeEvent"`                     // Window.routeEvent() Obsolete since Gecko 24 FIXME: NeedsContents
+	Scroll                      func()                      `js:"scroll"`                         // Window.scroll() Scrolls the window to a particular place in the document.
+	ScrollBy                    func()                      `js:"scrollBy"`                       // Window.scrollBy() Scrolls the document in the window by the given amount.
+	ScrollByLines               func()                      `js:"scrollByLines"`                  // Window.scrollByLines() Scrolls the document by the given number of lines.
+	ScrollByPages               func()                      `js:"scrollByPages"`                  // Window.scrollByPages() Scrolls the current document by the specified number of pages.
+	ScrollTo                    func()                      `js:"scrollTo"`                       // Window.scrollTo() Scrolls to a particular set of coordinates in the document.
+	SetCursor                   func()                      `js:"setCursor"`                      // Window.setCursor() Changes the cursor for the current window
+	SetImmediate                func()                      `js:"setImmediate"`                   // Window.setImmediate() Executes a function after the browser has finished other heavy tasks
+	SetResizable                func()                      `js:"setResizable"`                   // Window.setResizable() Toggles a user's ability to resize a window.
+	ShowModalDialog             func()                      `js:"showModalDialog"`                // Window.showModalDialog() Displays a modal dialog.
+	SizeToContent               func()                      `js:"sizeToContent"`                  // Window.sizeToContent() Sizes the window according to its content.
+	Stop                        func()                      `js:"stop"`                           // Window.stop() This method stops window loading.
+	UpdateCommands              func()                      `js:"updateCommands"`                 // Window.updateCommands() Updates the state of commands of the current chrome window (UI).
+	Ondevicelight               func()                      `js:"ondevicelight "`                 // Window.ondevicelight An event handler property for any ambient light levels changes
+	Ondevicemotion              func()                      `js:"ondevicemotion "`                // Window.ondevicemotion Called if accelerometer detects a change (For mobile devices)
+	Ondeviceorientation         func()                      `js:"ondeviceorientation "`           // Window.ondeviceorientation Called when the orientation is changed (For mobile devices)
+	Ondeviceorientationabsolute func()                      `js:"ondeviceorientationabsolute   "` // Window.ondeviceorientationabsolute   Chrome only An event handler property for any device orientation changes.
+	Ondeviceproximity           func()                      `js:"ondeviceproximity "`             // Window.ondeviceproximity An event handler property for device proximity event
+	Onappinstalled              func()                      `js:"onappinstalled "`                // Window.onappinstalled Called when the page is installed as a webapp. See appinstalled event.
+	Oninput                     func()                      `js:"oninput "`                       // Window.oninput Called when the value of an <input> element changes
+	Onpaint                     func()                      `js:"onpaint "`                       // Window.onpaint An event handler property for paint events on the window.
+	Onrejectionhandled          func()                      `js:"onrejectionhandled  "`           // Window.onrejectionhandled  An event handler for handled Promise rejection events.
+	Onuserproximity             func()                      `js:"onuserproximity "`               // Window.onuserproximity An event handler property for user proximity events.
+	Onvrdisplayconnected        func()                      `js:"onvrdisplayconnected  "`         // Window.onvrdisplayconnected  Represents an event handler that will run when a compatible VR device has been connected to the computer (when the vrdisplayconnected event fires).
+	Onvrdisplaydisconnected     func()                      `js:"onvrdisplaydisconnected  "`      // Window.onvrdisplaydisconnected  Represents an event handler that will run when a compatible VR device has been disconnected from the computer (when the vrdisplaydisconnected event fires).
+	Onvrdisplaypresentchange    func()                      `js:"onvrdisplaypresentchange  "`     // Window.onvrdisplaypresentchange  represents an event handler that will run when the presenting state of a VR device changes — i.e. goes from presenting to not presenting, or vice versa (when the onvrdisplaypresentchange event fires).
 }
 
 func WrapWindow(o *js.Object) *Win {
